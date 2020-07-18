@@ -8,7 +8,11 @@ class EmployeeWage {
 	int isFullTime=2;
 	int empRatePerHr=20;
 	int hour=0;
+	int numWorkingDays=20;
+	int salary=0;
+	int totalSalary=0;
 
+	for(int day=1; day<=numWorkingDays; day++){
 	// create instance of Random class
         Random rand = new Random();
 
@@ -26,9 +30,13 @@ class EmployeeWage {
 		hour=0;
 	   }
 
-	System.out.println("Salary is: "+(empRatePerHr*hour));
-
+	salary = (hour*empRatePerHr);
+	totalSalary = (totalSalary + salary);
 	}
+
+	System.out.println("Salary is: "+totalSalary);
+
+}
 
 
 }
