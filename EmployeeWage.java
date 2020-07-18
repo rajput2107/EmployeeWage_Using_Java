@@ -2,10 +2,12 @@ import java.util.Random;
 
 class EmployeeWage {
 
+	public static final int isPartTime=1;
+	public static final int isFullTime=2;
+
 	public static void main(String args[]){
 
-	int isPartTime=1;
-	int isFullTime=2;
+
 	int empRatePerHr=20;
 	int hour=0;
 	int numWorkingDays=20;
@@ -24,10 +26,10 @@ class EmployeeWage {
 
 	totalWorkingDays+=1;
 	switch(empCheck){
-	case 1:
+	case isPartTime:
 		hour=4;
 		break;
-	case 2:
+	case isFullTime:
 		hour=8;
 		break;
 	default:
