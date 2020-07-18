@@ -11,14 +11,18 @@ class EmployeeWage {
 	int numWorkingDays=20;
 	int salary=0;
 	int totalSalary=0;
+	int maxHrInMonth=100;
 
-	for(int day=1; day<=numWorkingDays; day++){
+	int totalEmpHrs=0;
+	int totalWorkingDays=0;
+	while( totalEmpHrs < maxHrInMonth && totalWorkingDays < numWorkingDays){
 	// create instance of Random class
         Random rand = new Random();
 
         // Generate random integers in range 0 to 2
         int empCheck = rand.nextInt(3);
 
+	totalWorkingDays+=1;
 	switch(empCheck){
 	case 1:
 		hour=4;
@@ -30,10 +34,10 @@ class EmployeeWage {
 		hour=0;
 	   }
 
-	salary = (hour*empRatePerHr);
-	totalSalary = (totalSalary + salary);
+	totalEmpHrs = totalEmpHrs+hour;
 	}
 
+	totalSalary = totalEmpHrs*empRatePerHr;
 	System.out.println("Salary is: "+totalSalary);
 
 }
