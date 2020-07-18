@@ -4,8 +4,10 @@ class EmployeeWage {
 
 	public static void main(String args[]){
 
-	int isPresent=1;
-	int salary=0;
+	int isPartTime=1;
+	int isFullTime=2;
+	int empRatePerHr=20;
+	int hour=0;
 
 	// create instance of Random class
         Random rand = new Random();
@@ -14,16 +16,16 @@ class EmployeeWage {
         int randomCheck = rand.nextInt(3);
 
 
-	if(randomCheck == isPresent){
-		int empRatePerHour=20;
-		int hour=8;
-		salary=hour*empRatePerHour;
+	if(randomCheck == isPartTime){
+		hour=4;
 	     }
-
+	else if(randomCheck == isFullTime){
+		hour=8;
+	}
 	else{
-		salary=0;
+		hour=0;
 	   }
-	System.out.println(salary);
+	System.out.println(empRatePerHr*hour);
 
 	}
 
