@@ -13,19 +13,20 @@ class EmployeeWage {
         Random rand = new Random();
 
         // Generate random integers in range 0 to 2
-        int randomCheck = rand.nextInt(3);
+        int empCheck = rand.nextInt(3);
 
-
-	if(randomCheck == isPartTime){
+	switch(empCheck){
+	case 1:
 		hour=4;
-	     }
-	else if(randomCheck == isFullTime){
+		break;
+	case 2:
 		hour=8;
-	}
-	else{
+		break;
+	default:
 		hour=0;
 	   }
-	System.out.println(empRatePerHr*hour);
+
+	System.out.println("Salary is: "+(empRatePerHr*hour));
 
 	}
 
