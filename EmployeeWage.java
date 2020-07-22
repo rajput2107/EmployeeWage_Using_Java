@@ -12,7 +12,7 @@ public class EmployeeWage implements IComputeEmpWage {
 	public EmployeeWage(){
 	companyEmpWageList = new ArrayList<>();
 	}
-
+	//Storing data
 	 public void addCompanyEmpWage(String company, int empRatePerHr, int 
 					numWorkingDays, int maxHrInMonth){
  
