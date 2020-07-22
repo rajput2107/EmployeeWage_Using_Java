@@ -1,3 +1,5 @@
+
+
 public class CompanyEmpWage {
 
 	public static String company;
