@@ -73,7 +73,7 @@ public class EmployeeWage implements IComputeEmpWage {
 
 	public static void main(String args[]){
 
-	EmployeeWage empWageBuilder = new EmployeeWage();
+	IComputeEmpWage empWageBuilder = new EmployeeWage();
 	empWageBuilder.addCompanyEmpWage("Google",30,20,100);
 	empWageBuilder.addCompanyEmpWage("Goldman",25,24,80);
 	empWageBuilder.employeeWageCalculator();
