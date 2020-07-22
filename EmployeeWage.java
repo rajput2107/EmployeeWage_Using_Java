@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class EmployeeWage {
+public class EmployeeWage {
 
 	public static final int isPartTime=1;
 	public static final int isFullTime=2;
@@ -9,6 +9,7 @@ class EmployeeWage {
 	private final int empRatePerHr;
 	private final int numWorkingDays;
 	private final int maxHrInMonth;
+	private int totalSalary;
 
 
 	public EmployeeWage(String company, int empRatePerHr, int 
@@ -22,12 +23,11 @@ class EmployeeWage {
 
 
 
-	private int employeeWageCalculator(){
+	public void employeeWageCalculator(){
 
 
 	int hour=0;
 	int salary=0;
-	int totalSalary=0;
 	int counter=0;
 	int totalEmpHrs=0;
 	int totalWorkingDays=0;
@@ -60,19 +60,22 @@ class EmployeeWage {
 
 
 	totalSalary = totalEmpHrs*empRatePerHr;
-	return totalSalary;
+	
 
     }
-
-
-
+	@Override
+	public String toString(){
+	return ("Total Emp wage for company "+ company +" is: "+ totalSalary);
+	}
 
 	public static void main(String args[]){
 
 	EmployeeWage google = new EmployeeWage("Google",30,20,100);
 	EmployeeWage goldman = new EmployeeWage("Goldman",25,24,90);
-	System.out.println("Total Emp wage for company "+ google.company +" is: "+google.employeeWageCalculator()+"\n");
-	System.out.println("Total Emp wage for company "+ goldman.company +" is: "+goldman.employeeWageCalculator()+"\n");
+	google.employeeWageCalculator();
+	System.out.println(google);
+	goldman.employeeWageCalculator();
+	System.out.println(goldman);
 
 	}
 
