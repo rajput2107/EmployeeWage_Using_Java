@@ -7,17 +7,21 @@ public class EmployeeWage implements IComputeEmpWage {
 	public static final int isFullTime=2;
 
 	private int numOfCompany=0;
-	private ArrayList<CompanyEmpWage> companyEmpWageList;
+	private LinkedList<CompanyEmpWage> companyEmpWageList;
+	private Map<String,CompanyEmpWage> companyToEmpWageMap;
 
 	public EmployeeWage(){
-	companyEmpWageList = new ArrayList<>();
+	companyEmpWageList = new LinkedList<>();
+	companyToEmpWageMap = new HashMap<>();	
 	}
+
 	//Storing data
 	 public void addCompanyEmpWage(String company, int empRatePerHr, int 
 					numWorkingDays, int maxHrInMonth){
  
 	CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHr, numWorkingDays, maxHrInMonth);
 	companyEmpWageList.add(companyEmpWage);
+	companyToEmpWageMap.put(company,companyEmpWage);
        }
 
 
@@ -27,6 +31,12 @@ public class EmployeeWage implements IComputeEmpWage {
 	    companyEmpWage.setTotalEmpWage(this.employeeWageCalculator(companyEmpWage));
 	System.out.println(companyEmpWage);
 	}
+	}
+
+	@Override
+	public int getTotalWage(String company){
+	return companyToEmpWageMap.get(company).totalSalary;
+
 	}
 
 
@@ -66,7 +76,7 @@ public class EmployeeWage implements IComputeEmpWage {
 
 
 
-	return totalEmpHrs*companyEmpWage.empRatePerHr;
+	return totalEmpHrs*(companyEmpWage.empRatePerHr);
 	//return totalSalary;
 
     }
@@ -78,7 +88,7 @@ public class EmployeeWage implements IComputeEmpWage {
 	empWageBuilder.addCompanyEmpWage("Google",30,20,100);
 	empWageBuilder.addCompanyEmpWage("Goldman",25,24,80);
 	empWageBuilder.employeeWageCalculator();
-
+	System.out.println("Total Wage for Google Company: "+empWageBuilder.getTotalWage("Google"));
 	}
 
 
