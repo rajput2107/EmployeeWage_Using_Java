@@ -9,7 +9,7 @@ class EmployeeWage {
 	int empRatePerHr=20;
 	int hour=0;
 
-	// create instance of Random class
+	// Create Instance of Random class
         Random rand = new Random();
 
         // Generate random integers in range 0 to 2
