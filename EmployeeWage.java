@@ -24,7 +24,7 @@ public class EmployeeWage implements IComputeEmpWage {
 	companyToEmpWageMap.put(company,companyEmpWage);
        }
 
-
+	// Calculating Wage
 	public void employeeWageCalculator(){
 	for(int i=0; i<companyEmpWageList.size(); i++){
 	CompanyEmpWage companyEmpWage = companyEmpWageList.get(i);
